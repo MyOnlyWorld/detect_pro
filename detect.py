@@ -288,12 +288,15 @@ def detect(Sensor_ID, udpClient, addr,jsonName,centers,location):
 
             # Stream results
             if True:
-                cv2.imshow(p, im0)
+                # cv2.imshow(p, im0)
+                
                 out__.write(im0)
-                if cv2.waitKey(1) == ord('q'):  # q to quit
-                    with open(filnam2, "w") as f:
-                        f.write(str(trace2txt))
-                    raise StopIteration
+                with open(filnam2, "w") as f:
+                    f.write(str(trace2txt))
+                # if cv2.waitKey(1) == ord('q'):  # q to quit
+                #     with open(filnam2, "w") as f:
+                #         f.write(str(trace2txt))
+                #     raise StopIteration
 
 
 if __name__ == '__main__':
