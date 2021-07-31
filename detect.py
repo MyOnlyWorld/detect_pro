@@ -26,7 +26,7 @@ def distDTW(ts1,ts2):
     return sqrt(DTW[len(ts1) - 1, len(ts2) - 1])
 
 def Reliability_calculation(locdata):
-    filname1 = 'D:/pycode/code/Mean_Shift/centroids.txt'
+    filname1 = './centroids.txt'
     with open(filname1, "r") as f:
         for line in f.readlines():
             line = line.strip('\n').replace('[[', '').replace(']]', '').replace('[', '').replace(']', '').split(
@@ -113,10 +113,10 @@ def coord2loc():
     k_means_clust(data, num_clust, num_iter, 3)
 
 def trace_read():
-    filname = 'D:/pycode/code2021/yolov5_deepsort/tracetxt.txt'
+    filname = './tracetxt.txt'
     with open(filname, "r") as f:
         line = f.read().replace('[', '').replace(']], ', '\n').replace(']', '')  # 去掉列表中每一个元素的换行符
-    filname2 = 'D:/pycode/code2021/yolov5_deepsort/tracetxt2.txt'
+    filname2 = './tracetxt2.txt'
     with open(filname2, "w") as f:
         f.write(line)
     coord2loc()
